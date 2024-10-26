@@ -19,18 +19,31 @@ The dataset used in this project contains information on students, such as:
 
 #### 3. Data Cleaning Process
    
-- Handling Missing Values: Numerical Columns: Missing values in numerical columns (scores) were filled with the median.
-- Handling Missing Values: Categorical Columns: Missing values in categorical columns (like gender and lunch) were filled with the most frequent value (mode).
-- Smoothing Noisy Data: To reduce noise in the scores, a rolling mean (window size of 3) was applied to the math_score, reading_score, and writing_score columns.
-- Removing Outliers: Outliers were identified and removed using the Interquartile Range (IQR) method for numeric columns. This helped remove extreme values that could distort the analysis.
+- Inspecting the Data
+- Data Transformation (Standardizing Scores for Clustering)
+- Outlier Identification (used boxplots for each numeric column helps in identifying potential outliers)
 
 #### 4. Key Findings
       
-The final cleaned dataset contains 978 entries and is ready for further analysis. Descriptive statistics after cleaning:
+- Students who completed the test preparation course have higher average scores across all subjects compared to those who didn’t.
+- Females tend to perform better in reading and writing scores, whereas males perform better in math.
+- Students with standard lunch (proxy for higher socioeconomic status) perform significantly better across all subjects than those with free/reduced lunch (proxy for lower socioeconomic status).
+- High Performers tend to have parents with higher educational backgrounds (e.g., associate's degree), are more likely to have taken the test preparation course, and tend to have standard lunch.
+- Low Performers are more likely to have parents with lower education (e.g., high school), tend to have free/reduced lunch, and more often did not take the test preparation course.
 
-- Math Score: Mean = 66.49, Std = 8.06
-- Reading Score: Mean = 69.55, Std = 7.93
-- Writing Score: Mean = 68.46, Std = 8.25
+*High Performers Top Characteristics:*
+
+- Gender: More likely to be female.
+- Race: More students from group D.
+- Lunch: Most have standard lunch.
+- Test Prep: More likely to have completed the test preparation course.
+
+*Low Performers Top Characteristics:*
+
+- Gender: More likely to be male.
+- Race: More students from group C.
+- Lunch: Most have free/reduced lunch.
+- Test Prep: More likely to not have completed the test preparation course.
 
 #### 5. Future Work
 
